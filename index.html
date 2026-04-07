@@ -68,32 +68,22 @@
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
   <!-- TODO: Replace with your paper title and authors -->
   <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
   
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
@@ -102,12 +92,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   <!-- Structured Data for Academic Papers -->
@@ -187,54 +181,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -242,7 +188,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Mem$^2$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation</h1>
+            <h1 class="title is-2 publication-title">Mem$^{2}$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">Zihao Cheng<sup>1</sup>,</span>
                 <span class="author-block">Zeming Liu<sup>1†</sup>,</span>
@@ -269,75 +215,31 @@
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                        <span class="external-link button is-normal is-rounded is-dark disabled-link">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
                         </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
+                      <span class="link-block">
+                        <span class="external-link button is-normal is-rounded is-dark disabled-link">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code</span>
+                        </span>
+                      </span>
+                    </div>
+                    <p class="resource-note"><small>Note: We are actively preparing the codebase and supplementary materials, which are currently undergoing the company's internal process review prior to public release.</small></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -347,7 +249,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While large language model-powered agents can self-evolve by accumulating experience or by dynamically creating new assets (i.e., tools or expert agents), existing frameworks typically treat these two evolutionary processes in isolation. This separation overlooks their intrinsic interdependence: the former is inherently bounded by a manually predefined static toolset, while the latter generates new assets from scratch without experiential guidance, leading to limited capability growth and unstable evolution. To address this limitation, we introduce a novel paradigm of co-evolutionary Capability Expansion and Experience Distillation. Guided by this paradigm, we propose <strong>Mem$^2$Evolve</strong>, which integrates two core components: <strong>Experience Memory</strong> and <strong>Asset Memory</strong>. Specifically, Mem$^2$Evolve leverages accumulated experience to guide the dynamic creation of assets, thereby expanding the agent's capability space while simultaneously acquiring new experience to achieve co-evolution. Extensive experiments across 6 task categories and 8 benchmarks demonstrate that Mem$^2$Evolve achieves improvement of 18.53% over standard LLMs, 11.80% over agents evolving solely through experience, and 6.46% over those evolving solely through asset creation, establishing it as a substantially more effective and stable self-evolving agent framework.
+            While large language model-powered agents can self-evolve by accumulating experience or by dynamically creating new assets (i.e., tools or expert agents), existing frameworks typically treat these two evolutionary processes in isolation. This separation overlooks their intrinsic interdependence: the former is inherently bounded by a manually predefined static toolset, while the latter generates new assets from scratch without experiential guidance, leading to limited capability growth and unstable evolution. To address this limitation, we introduce a novel paradigm of co-evolutionary Capability Expansion and Experience Distillation. Guided by this paradigm, we propose <strong>Mem$^{2}$Evolve</strong>, which integrates two core components: <strong>Experience Memory</strong> and <strong>Asset Memory</strong>. Specifically, Mem$^{2}$Evolve leverages accumulated experience to guide the dynamic creation of assets, thereby expanding the agent's capability space while simultaneously acquiring new experience to achieve co-evolution. Extensive experiments across 6 task categories and 8 benchmarks demonstrate that Mem$^{2}$Evolve achieves improvement of 18.53% over standard LLMs, 11.80% over agents evolving solely through experience, and 6.46% over those evolving solely through asset creation, establishing it as a substantially more effective and stable self-evolving agent framework.
           </p>
         </div>
       </div>
@@ -356,124 +258,145 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+<!-- Method figure -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
       </div>
     </div>
+    <div class="paper-figure">
+      <img src="static/images/method.png" alt="Overview of Mem2Evolve framework" loading="eager" />
+    </div>
+    <p class="figure-caption has-text-justified">
+      <strong>Overview of Mem$^{2}$Evolve</strong>, a self-evolving agent framework built on a <strong>Dual-Memory</strong> mechanism.
+      The evolution proceeds in two phases. During <strong>Forward Inference</strong>, the agent recruits tools and expert agents from
+      <em>Asset Memory</em> to execute the current task. When the task exceeds its current capability boundary, <em>Experience Memory</em>
+      is leveraged to guide the stable creation of new assets on demand. During <strong>Backward Evolution</strong>, newly validated assets
+      are preserved in Asset Memory to achieve persistent capability expansion, while strategic insights distilled from execution trajectories
+      are accumulated into Experience Memory. This forward-backward loop enables the co-evolution of capabilities and experience, forming
+      a stable self-evolving cycle.
+    </p>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End method figure -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+<!-- Comparison figure -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="paper-figure">
+      <img src="static/images/comparasion.png" alt="Comparison of self-evolving agent frameworks" loading="lazy" />
     </div>
+    <p class="figure-caption has-text-justified">
+      <strong>Comparison of self-evolving agent frameworks.</strong>
+      <strong>Optimization</strong> indicates whether experience is used to optimize the agent (e.g., prompts).
+      <strong>Persistence</strong> denotes whether experiences are persistently stored for future reuse.
+      <strong>Source</strong>: agent task execution trajectory and tool creation process.
+      <strong>Tool Crea.</strong> and <strong>Agent Crea.</strong> indicate whether the framework supports creation of tools and expert agents, respectively.
+      <strong>Tool/Agent</strong> denotes whether the toolset and expert agents are static or dynamic.
+      <strong>Crea. Grounding</strong> indicates the knowledge sources used for asset creation: parametric knowledge, web search information, and experience.
+      <strong>Exp.-Guided Creation</strong> indicates whether new assets are created under the guidance of past experience.
+    </p>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End comparison figure -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+<!-- Experiments -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+    <div class="exp-table-wrapper">
+      <table class="table is-fullwidth is-hoverable exp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="4">GAIA</th>
+            <th>Embodied</th>
+            <th colspan="2">Multi-Hop QA</th>
+            <th colspan="2">Math</th>
+            <th>Planning</th>
+            <th>Web Interaction</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Method</th>
+            <th>L1</th>
+            <th>L2</th>
+            <th>L3</th>
+            <th>Total</th>
+            <th>ALFWorld</th>
+            <th>HotpotQA</th>
+            <th>2Wiki</th>
+            <th>AIME24</th>
+            <th>AIME25</th>
+            <th>TravelPlanner</th>
+            <th>WebShop</th>
+            <th>Avg.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group-row"><td colspan="13"><em><strong>Naive-Large Language Model</strong></em></td></tr>
+          <tr>
+            <td>GPT-5-Chat (Direct)</td><td>16.98</td><td>12.79</td><td>7.69</td><td>12.49</td><td>83.58</td><td>50.40</td><td><u>81.80</u></td><td>60.00</td><td>46.67</td><td>38.68</td><td>22.31</td><td>49.49</td>
+          </tr>
+          <tr>
+            <td>GPT-5-Chat (CoT)</td><td>24.53</td><td>17.44</td><td>11.54</td><td>17.84</td><td>83.58</td><td>47.40</td><td>74.40</td><td>66.67</td><td>56.67</td><td>39.51</td><td>27.49</td><td>51.71</td>
+          </tr>
+          <tr>
+            <td>GPT-5-Chat (ReAct)</td><td>26.42</td><td>17.44</td><td>11.54</td><td>18.47</td><td>86.87</td><td>41.40</td><td>48.40</td><td>66.67</td><td>60.00</td><td>39.13</td><td>25.10</td><td>48.27</td>
+          </tr>
+          <tr>
+            <td>OpenAI-DeepResearch$^{\dagger}$</td><td>74.29</td><td>69.06</td><td><u>47.60</u></td><td>67.36</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td>
+          </tr>
 
+          <tr class="group-row"><td colspan="13"><em><strong>Experience-Centric Evolving</strong></em></td></tr>
+          <tr>
+            <td>DyLAN</td><td>24.53</td><td>19.78</td><td>11.54</td><td>18.62</td><td>91.20</td><td>52.00</td><td>65.00</td><td>46.67</td><td>43.33</td><td>43.15</td><td>36.40</td><td>49.55</td>
+          </tr>
+          <tr>
+            <td>EvoAgent</td><td>22.64</td><td>19.78</td><td>11.54</td><td>17.99</td><td>92.50</td><td>54.40</td><td>75.00</td><td>66.67</td><td>43.33</td><td>49.20</td><td>37.80</td><td>54.61</td>
+          </tr>
+          <tr>
+            <td>AFLOW</td><td>26.42</td><td>17.44</td><td>15.38</td><td>19.75</td><td><u>93.40</u></td><td><strong>60.80</strong></td><td>72.40</td><td>66.67</td><td>63.33</td><td>53.24</td><td><u>37.90</u></td><td>58.44</td>
+          </tr>
+          <tr>
+            <td>DSPy</td><td>30.19</td><td>15.12</td><td>11.54</td><td>18.95</td><td>92.80</td><td>55.60</td><td>76.40</td><td>66.67</td><td>50.00</td><td>44.90</td><td>35.50</td><td>55.10</td>
+          </tr>
+
+          <tr class="group-row"><td colspan="13"><em><strong>Capability-Centric Evolving</strong></em></td></tr>
+          <tr>
+            <td>Alita</td><td><u>81.13</u></td><td><u>75.58</u></td><td>46.15</td><td><u>72.73</u></td><td>86.13</td><td><u>58.80</u></td><td>77.40</td><td><u>70.00</u></td><td><u>66.67</u></td><td>48.32</td><td>30.21</td><td><u>63.78</u></td>
+          </tr>
+          <tr>
+            <td>AgentVerse</td><td>30.19</td><td>16.28</td><td>19.23</td><td>21.90</td><td>88.32</td><td>38.60</td><td>74.60</td><td>60.00</td><td>50.00</td><td>47.25</td><td>32.53</td><td>51.65</td>
+          </tr>
+          <tr>
+            <td>AutoAgens</td><td>35.85</td><td>24.42</td><td>19.23</td><td>26.50</td><td>87.92</td><td>54.20</td><td>73.80</td><td>40.00</td><td>36.67</td><td>43.52</td><td>31.40</td><td>49.25</td>
+          </tr>
+          <tr>
+            <td>SwarmAgentic</td><td>28.30</td><td>18.60</td><td>13.46</td><td>20.40</td><td>88.79</td><td>56.00</td><td>80.00</td><td>46.67</td><td>40.00</td><td><u>59.14</u></td><td>34.12</td><td>53.14</td>
+          </tr>
+
+          <tr class="group-row"><td colspan="13"><em><strong>Ours</strong></em></td></tr>
+          <tr>
+            <td><strong>Mem$^{2}$Evolve</strong></td><td><strong>88.68</strong></td><td><strong>82.56</strong></td><td><strong>57.69</strong></td><td><strong>76.31</strong></td><td><strong>94.31</strong></td><td><strong>60.80</strong></td><td><strong>82.00</strong></td><td><strong>76.70</strong></td><td><strong>73.33</strong></td><td><strong>59.25</strong></td><td><strong>39.20</strong></td><td><strong>70.24</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption has-text-justified">
+      <strong>Main results across 6 tasks and 8 benchmarks</strong>, reported as Pass@1 for each benchmark.
+      The best results are highlighted in <strong>bold</strong>, and the second-best results are <u>underlined</u>.
+      <em>$^{\dagger}$ Results are from the original paper.</em>
+    </p>
+  </div>
+</section>
+<!-- End experiments -->
 
 
 <!--BibTex citation -->

@@ -82,6 +82,21 @@ body {
     margin: 8px 4px;
 }
 
+.link-block .button {
+    margin: 8px 4px;
+}
+
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.92;
+}
+
+.resource-note {
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+}
+
 .dnerf {
   font-variant: small-caps;
 }
@@ -118,8 +133,63 @@ body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
     color: var(--text-primary) !important;
+    font-size: clamp(1.9rem, 4vw, 2.7rem) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
+}
+
+.paper-figure {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+}
+
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure-caption {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.exp-table-wrapper {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.exp-table {
+  min-width: 1180px;
+  background: #fff;
+}
+
+.exp-table th,
+.exp-table td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.45rem;
+}
+
+.exp-table th:first-child,
+.exp-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.exp-table .group-row td {
+  text-align: center !important;
+  background: #eef5ff;
+  font-weight: 700;
 }
 
 .publication-banner {
@@ -609,7 +679,7 @@ code {
   }
   
   .publication-title {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
   }
@@ -658,7 +728,7 @@ code {
 
 @media screen and (max-width: 480px) {
   .publication-title {
-    font-size: 2rem !important;
+    font-size: 1.65rem !important;
   }
   
   .hero-body {
